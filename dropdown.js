@@ -2,12 +2,12 @@
  * jQuery Dropdown
  * http://blog.gatherage.com/jquery-select-dropdown
  *
- * Copyright 2011, Rob Rothermel
+ * Copyright 2012, Rob Rothermel
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
- * Date: Thu Oct 03 2011 00:28:29 GMT-0400 (EST)
+ * Date: Fri Mar 16 20:46:40 EDT 2012
  */
 
 (function($) {
