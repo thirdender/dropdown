@@ -1,0 +1,172 @@
+/*!
+ * jQuery Dropdown
+ * http://blog.gatherage.com/jquery-select-dropdown
+ *
+ * Copyright 2011, Rob Rothermel
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Date: Thu May 12 2011 17:36:29 GMT-0400 (EST)
+ */
+.dropdown dd, .dropdown dt, .dropdown ul {
+    margin: 0;
+    padding:0;
+}
+.dropdown dd {
+    position: relative;
+    z-index: 100;
+}
+.dropdown a, .dropdown a:visited {
+    color: black;
+    text-decoration: none;
+    outline: none;
+}
+.dropdown dt a:hover, .dropdown dt a:focus, dl.dropdownActive dt a {
+    color: #333;
+    border: 1px solid #0a3b4c;
+}
+.dropdown dt a, .dropdown dt a span.label {
+    -o-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+.dropdown dt a {
+    background: white url(bg.a.png) repeat-x 0 100%;
+    display: block;
+    border: 1px solid #8caec6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    width: 175px;
+    color: black;
+    font-size: .8em;
+    background: -moz-linear-gradient(
+	top,
+	#ffffff,
+	#e1eef7
+    );
+    background: -webkit-gradient(
+	linear,
+	left top, left bottom,
+	from(#ffffff),
+	to(#e1eef7)
+    );
+    }
+    .dropdownActive dt a {
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+    }
+    .dropdownDefaultValue dt a, .dropdownDefaultValue dt a:visited {
+	color: #0a3b4c;
+	}
+	dl.dropdownDefaultValue dt a:hover, dl.dropdownDefaultValue:hover dt a {
+	    color: #333;
+	}
+.dropdown dt a, .dropdownActive dd ul {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+}
+.dropdown dt a span {
+    vertical-align: middle;
+    display: -moz-inline-block;
+    display: inline-block;
+    cursor: pointer;
+    }
+    .dropdown dt a span.label {
+	padding: 2px 5px;
+	line-height: 16px;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 148px;
+	border-right: 1px solid #c0d6e7;
+	}
+	.dropdownActive dt a span.label {
+	    -webkit-border-radius: 4px 0 0 4px;
+	    -moz-border-radius: 4px 0 0 4px;
+	    border-radius: 4px 0 0 4px;
+	    background: white url(bg.active.png) repeat-x 0 0;
+	    background: -moz-linear-gradient(
+		top,
+		#deecf7,
+		#ffffff
+	    );
+	    background: -webkit-gradient(
+		linear,
+		left top, left bottom,
+		from(#deecf7),
+		to(#ffffff)
+	    );
+	}
+    .dropdown dt a span.arrow {
+	background: url(arrow.gif) no-repeat 50% 50%;
+	width: 16px;
+	height: 5px;
+    }
+.dropdown dd ul {
+    background: white;
+    border: 1px solid #0a3b4c;
+    border-top: 0;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+    color: black;
+    display: none;
+    left: 0;
+    top: 0;
+    width: auto;
+    min-width: 163px;
+    white-space: nowrap;
+    list-style: none;
+    padding: 0 12px 0 0;
+    position: absolute;
+    z-index: 2002;
+    max-height: 240px;
+    overflow: auto;
+    -ms-zoom: 1;
+    }
+    .dropdownActive dd ul {
+	display: block;
+	}
+	.dropdownActive dd ul ul {
+	    position: static;
+	    -webkit-box-shadow: none;
+	    -moz-box-shadow: none;
+	    box-shadow: none;
+	    border: 0;
+	    margin-right: -12px;
+	}
+    * html .dropdown dd ul {
+	padding: 0;
+	zoom: 1;
+	width: 240px;
+    }
+.dropdown dd ul li strong {
+    display: block;
+    padding-left: 5px;
+    cursor: default;
+}
+.dropdown dd ul li a {
+    padding: 2px 5px;
+    display: block;
+    font-size: .8em;
+    margin-right: -12px;
+    }
+    .dropdown dd ul ul li a {
+	padding-left: 15px;
+    }
+    * html .dropdown dd ul li a {
+	margin-right: 0;
+    }
+.dropdown dd ul li a:hover { background-color: #deecf7;}
+    .dropdown dd > ul:last-child > li:last-child > a:hover, .dropdown dd > ul:last-child > li:last-child > ul:last-child > li:last-child > a:hover {
+	-webkit-border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+    }
+dl.dropdown {
+    margin: .6em 0;
+}

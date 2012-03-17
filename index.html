@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+	<title>Dropdown test</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	    // If jQuery fails to load from Google's servers (blocked by AdBlock, for example), load our local copy
+	    if (!window.jQuery) document.write(unescape("%3Cscript%20type%3D%22text/javascript%22%20src%3D%22http://code.jquery.com/jquery-1.7.1.min.js%22%3E%3C/script%3E"));
+	</script>
+
+	<!-- Load the Dropdown JS and CSS -->
+	<script type="text/javascript" src="dropdown.js"></script>
+	<link href="default/dropdown.css" title="default" rel="stylesheet" type="text/css" />
+
+	<!-- Load extra stylesheets. These will be disabled until selected from the style switcher dropdown. -->
+	<link href="osX/osX.css" title="OS X" rel="stylesheet" type="text/css" />
+	<link href="echoTech/echoTech.css" title="Echo Tech" rel="stylesheet" type="text/css" />
+	<link href="five/five.css" title="Five" rel="stylesheet" type="text/css" />
+	<link href="candyCorn/dropdown.css" title="Candy Corn" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript">
+	    (function($) {
+		if (!$) return;
+
+		$(function() {
+		    // Initialize the plugin for the elements with the class "dropdown"
+		    $(".dropdown").dropdown();
+
+		    // For this demo, show the original selects instead of leaving them hidden
+		    $("select.dropdown").css("opacity", .5).show().find(" + .dropdown").wrap("<div />");
+
+		    // Code for the stylesheet switcher
+		    var stylesheets = $("link"),
+			stylesLink = $("#stylesLink span");
+		    $("select[name='styles']").hide().change(function() {
+			var active = stylesheets.not(stylesheets.not("[title='" + $(this).val() + "']").attr("disabled", "disabled")).removeAttr("disabled"),
+			    href = active.attr("href");
+			if (!href) {
+			    stylesLink.text("inline styles");
+			} else {
+			    stylesLink.empty().append($(document.createElement("a")).text(href).attr("href", href));
+			}
+		    }).change();
+		});
+	    })(window.jQuery);
+	</script>
+
+	<style type="text/css">
+	    body {
+		font: 72% Tahoma, arial, sans-serif;
+		margin: 4em;
+	    }
+	    #info a {
+		color: #614261;
+		text-decoration: none;
+		}
+		#info a img {
+		    border: 0;
+		}
+		#info a:hover {
+		    text-decoration: underline;
+		}
+	    h4 {
+		margin: 2em 0 0;
+	    }
+	    #downloadLink a:hover {
+		text-decoration: none;
+		}
+		#downloadLink a:hover span {
+		    text-decoration: underline;
+		}
+	    #downloadLink img {
+		margin-left: .4em;
+		vertical-align: middle;
+	    }
+	</style>
+    </head>
+    <body>
+	<div id="container">
+	    <h4>Default</h4>
+	    <dl class="dropdown dropdownDefaultValue"> 
+		<dt><a href="#"><span class="label">Select Your Computer</span><span class="arrow"></span></a></dt> 
+		<dd> 
+		    <ul>
+			<li><a href="trendmemory.html">A Trend</a></li>
+			<li><a href="amaxmemory.html">A-Max</a></li>
+			<li><a href="aaeonmemory.html">Aaeon</a></li>
+		    </ul>
+		</dd>
+	    </dl>
+
+	    <h4>Used for navigation</h4>
+	    <dl class="dropdown dropdownNavigation dropdownDefaultValue"> 
+		<dt><a href="#"><span class="label">Select A Page</span><span class="arrow"></span></a></dt> 
+		<dd> 
+		    <ul>
+			<li><a href="http://www.google.com/">Google</a></li>
+			<li><a href="http://www.yahoo.com/">Yahoo</a></li>
+		    </ul>
+		</dd>
+	    </dl>
+
+	    <h4>CSS scrollbar styling (work in progress)</h4>
+	    <dl class="dropdown dropdownDefaultValue"> 
+		<dt><a href="#"><span class="label">Extra long dropdown</span><span class="arrow"></span></a></dt> 
+		<dd> 
+		    <ul>
+			<li><a href="#">Option 0</a></li>
+			<li><a href="#">Option 1</a></li>
+			<li><a href="#">Option 2</a></li>
+			<li><a href="#">Option 3</a></li>
+			<li><a href="#">Option 4</a></li>
+			<li><a href="#">Option 5</a></li>
+			<li><a href="#">Option 6</a></li>
+			<li><a href="#">Option 7</a></li>
+			<li><a href="#">Option 8</a></li>
+			<li><a href="#">Option 9</a></li>
+			<li><a href="#">Option 10</a></li>
+			<li><a href="#">Option 11</a></li>
+			<li><a href="#">Option 12</a></li>
+			<li><a href="#">Option 13</a></li>
+			<li><a href="#">Option 14</a></li>
+			<li><a href="#">Option 15</a></li>
+			<li><a href="#">Option 16</a></li>
+			<li><a href="#">Option 17</a></li>
+			<li><a href="#">Option 18</a></li>
+			<li><a href="#">Option 19</a></li>
+			<li><a href="#">Option 20</a></li>
+		    </ul>
+		</dd>
+	    </dl>
+
+	    <h4>OPTGROUPs</h4>
+	    <dl class="dropdown dropdownDefaultValue"> 
+		<dt><a href="#"><span class="label">Select An Option</span><span class="arrow"></span></a></dt> 
+		<dd> 
+		    <ul>
+			<li><strong>Memory</strong>
+			    <ul>
+				<li><a href="trendmemory.html">A Trend</a></li>
+				<li><a href="amaxmemory.html">A-Max</a></li>
+				<li><a href="aaeonmemory.html">Aaeon</a></li>
+			    </ul>
+			</li>
+			<li><strong>Search Engines</strong>
+			    <ul>
+				<li><a href="http://www.google.com/">Google</a></li>
+				<li><a href="http://www.yahoo.com/">Yahoo</a></li>
+			    </ul>
+			</li>
+		    </ul>
+		</dd>
+	    </dl>
+
+	    <h4>Replace an existing SELECT</h4>
+	    <select name="test" title="Select a value" class="dropdown">
+		<option>Red</option>
+		<option>Green</option>
+		<option selected="selected">Blue</option>
+	    </select>
+
+	    <select name="test" title="Select a value" class="dropdown">
+		<optgroup label="Color">
+		    <option>Red</option>
+		    <option>Green</option>
+		    <option>Blue</option>
+		</optgroup>
+		<optgroup label="Size">
+		    <option>Small</option>
+		    <option>Medium</option>
+		    <option>Large</option>
+		</optgroup>
+	    </select>
+
+	    <h4>Styles</h4>
+	    <select name="styles" class="dropdown">
+		<option value="default">Default</option>
+		<option value="OS X">OS X</option>
+		<option value="Echo Tech">Echo Tech</option>
+		<option value="Five">Five</option>
+		<option value="Candy Corn">Candy Corn</option>
+	    </select>
+
+	    <div id="info">
+		<p id="stylesLink">Currently using <span></span></p>
+		<p id="downloadLink">Download archive: <a href="dropdown.tar.gz"><span>dropdown.tar.gz</span><img src="zip.png" height="16" alt="ZIP file icon" /></a></p>
+
+		<div id="todo" style="margin-top: 4em;">
+		    <h4>TODO:</h4>
+		    <ul>
+			<li>Add destroy method and <a href="http://docs.jquery.com/Plugins/Authoring#Namespacing">namespace</a> event binding</li>
+			<li>Handle "selected" attribute</li>
+			<li>Add a custom scrollbar when the dropdown gets too long</li>
+			<li>Mirror changes to the original SELECT</li>
+			<li>SELECT MULTIPLE</li>
+			<li>Add <a href="http://en.wikipedia.org/wiki/WAI-ARIA">ARIA</a> elements</li>
+			<li>Keep selected value after page refresh</li>
+			<li>jQuery UI bindings?</li>
+		    </ul>
+		</div>
+		<h4>Last Updated: 2011-10-03</h4>
+	    </div>
+	</div>
+    </body>
+</html>
